@@ -1,0 +1,68 @@
+#스프링 부트는 web.xml, servlet-dispatcher.xml 관련 설정들을 자동으로 해준다.
+# 따라서 뭘 설정할때는 여기서 한다.
+# 포트설정
+server:
+    port: 9090
+    endcoding:
+        charset: utf-8
+        enable: true
+spring:
+    profiles:
+        active: local
+    thymeleaf:
+        endcoding: utf-8
+        prefix: classpath:/templates/view/
+        suffix: .html
+        cashe: false
+        check-template-location: true
+# db.properties로 이관하기 위해서 주석
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 1234
+        jpa:
+            hibernate.ddl-auto: update
+            generate-ddl: true
+            show-sql: true
+    jpa:
+        show-sql : true #쿼리보이기
+        properties:
+            hibernate:
+                ## 콘솔에 표시되는 쿼리를 좀 더 가독성 있게 표시
+                format_sql: true
+                ## 콘솔에 표시되는 쿼리문 위에 어떤 실행을 하려는지 HINT를 표시
+                use_sql_comments: true
+
+    jackson:
+        serialization:
+            fail-on-empty-beans: false
+#mybatis 설정을 위한 부분
+mybatis:
+    type-aliases-package:  com.lunastratos.test.TEST.Mapper
+    mapper-locations: mybatis/mapper/**/*.xml
+--- #local과 dev 분리시
+server:
+    port: 9091
+    servlet:
+        context-path: /
+spring:
+    profiles: dev
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 1234
+        jpa:
+            hibernate.ddl-auto: update
+            generate-ddl: true
+            show-sql: true
+    jpa:
+        show-sql : true
+    jackson:
+        serialization:
+            fail-on-empty-beans: false

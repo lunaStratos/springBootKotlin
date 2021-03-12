@@ -1,0 +1,55 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>timeleaf 문법</title>
+</head>
+<body>
+<h1>타임리프 문법적용</h1>
+
+<p>단순 텍트스 데이터 <span th:text="${textData}"></span></p>
+<p>for문 데이터</p>
+<table>
+    <thead>
+        <td>아이디</td>
+        <td>나이</td>
+        <td>code</td>
+        <td>지역</td>
+        <td>이름</td>
+        <td>등록시간</td>
+    </thead>
+    <tr th:each="data : ${data}">
+        <td><span th:text="${data.id}"></span></td>
+        <td>
+            <span th:if="${data.age} > 20" th:text="${data.age}" style="color:red;"></span>
+            <span th:if="${data.age} <= 20" th:text="${data.age}" style="color:blue;"></span>
+        </td>
+        <td><span th:text="${data.code}"></span></td>
+        <td><span th:text="${data.loc}"></span></td>
+        <td><span th:text="${data.name}"></span></td>
+        <td><span th:text="${data.regdate}"></span></td>
+    </tr>
+</table>
+<p>switch 데이터 </p>
+<div th:switch="${status}">
+    <div th:case="'COMPLETE'">
+        COMPLETE
+    </div>
+    <div th:case="'INVALID'">
+        INVALID
+    </div>
+    <div th:case="'NEW'">
+        NEW
+    </div>
+</div>
+
+<p>if문 데이터 </p>
+<div th:if="${status} eq 'COMPLETE' or ${status} eq 'INVALID'">
+    COMPLETE or INVALID
+</div>
+<div th:if="${status} eq 'NEW'">
+    NEW
+</div>
+
+
+</body>
+</html>

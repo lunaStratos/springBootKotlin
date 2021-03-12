@@ -1,0 +1,4 @@
+?useUnicode=true&characterEncoding=utf8 를 붙혀야 한글 input 이 됨. (그전엔 null
+
+
+https://blog.jiniworld.me/34

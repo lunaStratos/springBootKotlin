@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../TEST/build/classes/java/querydsl" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../TEST/build/generated/source/kapt/querydsl">
+      <sourceFolder url="file://$MODULE_DIR$/../../TEST/build/generated/source/kapt/querydsl" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../TEST/build/generated/source/kaptKotlin/querydsl">
+      <sourceFolder url="file://$MODULE_DIR$/../../TEST/build/generated/source/kaptKotlin/querydsl" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../TEST/src/querydsl">
+      <sourceFolder url="file://$MODULE_DIR$/../../TEST/src/querydsl/java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Gradle: kaptGeneratedClasses">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../TEST/build/tmp/kapt3/classes/querydsl" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
+  </component>
+</module>
